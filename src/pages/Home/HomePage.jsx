@@ -1,44 +1,15 @@
 import React from 'react'
 import "./HomePage.css"
 import Slider from './Slider'
+import PopularProducts from './PopularProducts'
 
 const HomePage = () => {
   return (
     <div className="homepage">
-        <div className='fill'></div>
+        <div className='fill'>
         <Slider/>        
-        <div className="random-products">
-            <div className="product-card">
-                <img src="" alt="" />
-                <h4>Test-1</h4>
-                <p>Test-1 Aciklama</p>
-            </div>
-            <div className="product-card">
-                <img src="" alt="" />
-                <h4>Test-1</h4>
-                <p>Test-1 Aciklama</p>
-            </div>
-            <div className="product-card">
-                <img src="" alt="" />
-                <h4>Test-1</h4>
-                <p>Test-1 Aciklama</p>
-            </div>
-            <div className="product-card">
-                <img src="" alt="" />
-                <h4>Test-1</h4>
-                <p>Test-1 Aciklama</p>
-            </div>
-            <div className="product-card">
-                <img src="" alt="" />
-                <h4>Test-1</h4>
-                <p>Test-1 Aciklama</p>
-            </div>
-            <div className="product-card">
-                <img src="" alt="" />
-                <h4>Test-1</h4>
-                <p>Test-1 Aciklama</p>
-            </div>
-        </div>
+        <PopularProducts/>
+    </div>
     </div>
   )
 }
