@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { Filterbox } from "../Products/Filterbox.jsx";
+import "./Products.css";
+import Sortbox from "../Products/Sortbox.jsx";
 
-const FilterArea = () => {
+const ProductList = () => {
   return (
-    <div>FilterArea</div>
-  )
-}
+    <div className="">
+      <Filterbox/>
+      <div>
+        <div  className="">
+          <Sortbox/>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default FilterArea
+export default ProductList;

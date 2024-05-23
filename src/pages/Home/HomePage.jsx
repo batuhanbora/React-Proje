@@ -6,8 +6,11 @@ import PopularProducts from './PopularProducts'
 const HomePage = () => {
   return (
     <div className="homepage">
-        <div className='fill'>
-        <Slider/>        
+        <Slider/>
+        <div className='container'>
+        <div className="popular-products">
+          <h2>En Begenilen Urunlerimiz</h2>
+          </div>        
         <PopularProducts/>
     </div>
     </div>

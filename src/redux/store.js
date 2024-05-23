@@ -1,11 +1,11 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { cart}  from './reducers.js'
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import { showHideCart, addToCart}  from './reducers.js'
 
-const defaultState = {
-    cart: false
-}
-
-export const store = configureStore({
-    reducer: cart,
-    preloadedState: defaultState
+const reducer = combineReducers({
+        showHideCart,
+        addToCart
 })
+
+const store = configureStore({reducer});
+
+export default store;

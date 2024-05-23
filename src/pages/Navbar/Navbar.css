@@ -1,5 +1,5 @@
 .navbar {
-    background-color: rgb(246, 189, 96, 0.9);
+    background-color: rgb(38, 70, 83, 0.9);
     padding: 1.2rem 3rem;
     display: flex;
     flex-direction: row;
@@ -10,18 +10,17 @@
     width: 100%;
     top: 0;
     left: 0;
-    box-shadow:  0 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 90px 20px rgba(105, 105, 105, 0.717);
     z-index: 100;
   }
   
   .logo {
-    color: rgb(242, 132, 130, 0.5);
+    color: rgb(233, 196, 106);
     font-size: 1.5rem;
     font-weight: bold;
-    border: 2px dashed rgba(127, 79, 96, 0.3);
     border-radius: 20px;
     padding: 5px;
-    background-color: rgb(245, 202, 195, 0.8);
+    background-color: rgb(42, 157, 143, 0.8);
     text-shadow: 2px 1px 0px rgba(0, 0, 0, 0.3);;
   }
   
@@ -38,7 +37,7 @@
   
   .navbar-button {
     text-decoration: none;
-    color: rgb(245, 202, 195);
+    color: rgb(233, 196, 106);
     font-weight: bold;
     font-size: 1.3rem;
     border: 1px solid rgba(127, 79, 96, 0.3);
@@ -50,24 +49,53 @@
     box-shadow 0.4s ease-in-out, 
     color 0.2s ease-in-out;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    background-color: rgb(132, 165, 157, 0.8);
+    background-color: rgb(42, 157, 143, 0.8);
   }
   
+  .cart{
+    cursor: pointer;
+  }
+
   .navbar-button:hover {
     color: rgb(247, 237, 226);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     padding: 5px;
     box-shadow: inset 0px 6px 2px rgba(0, 0, 0, 0.3);
     border-radius: 20px;
-    background-color: rgb(242, 132, 130, 0.5);
+    background-color: rgb(233, 196, 106, 0.5);
     cursor: pointer;
   }
 
-  .navbar-cart{
-    padding-top: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: end;
+  .navbar-cart-open{
+    position: fixed;
+  top: 0;
+  right: 0;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  width: fit-content;
+  height: 100%;
+  margin: 0;
+  z-index: 99;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(0);
+  }
+
+  .navbar-cart-close{
+    position: fixed;
+  top: 0;
+  right: 0;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  width: fit-content;
+  height: 100%;
+  margin: 0;
+  z-index: 99;
+  transition: transform 0.3s ease-out;
+  transform: translateX(100%);
   }
 
   div .close{
@@ -75,7 +103,7 @@
     color: black;
     background-color: gray;
     border: 1px solid black;
-    width: 300px;
+    width: fit-content;
     height: auto;
   }
 
@@ -85,14 +113,113 @@
     color: black;
     background-color: gray;
     border: 1px solid black;
-    width: 300px;
+    width: fit-content;
     height: auto;
     border-radius: 2px;
-    padding: 15px;
+    padding: 5px 15px;
   }
 
   div .open p{
     color: black;
+  }
+
+  .description {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    text-transform: capitalize;
+  }
+  
+  .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .item:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+  }
+  
+  .quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .shopping-cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0.3rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .plus-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: #eee;
+    color: #333;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .plus-btn:hover {
+    background-color: #333;
+    color: #eee;
+  }
+  
+  .minus-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: #eee;
+    color: #333;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .minus-btn:hover {
+    background-color: #333;
+    color: #eee;
+  }
+  
+  img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 0.5rem;
   }
   
   /* .slider-container{

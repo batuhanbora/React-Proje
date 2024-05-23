@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -7,17 +7,17 @@ import Cart from "./Cart";
 
 const Navbar = () => {
 
-  const cart = useSelector(state => state.cart)
+  const cart = useSelector(state => state.showHideCart )
   const dispatch = useDispatch()
 
   const handleCart = () =>{
-    dispatch(showHideCart())
+    dispatch(showHideCart)
     console.log('tiklandi');
-    console.log(cart);
+    console.log(cart.showHideCart);
   }
 
   return (
-    <div className="navbar-cart">
+    <div>
       <div className="navbar">
         <div className="logo">things</div>
         <nav className="nav-links">
@@ -34,15 +34,15 @@ const Navbar = () => {
             </li>
             <li>
               <div className="cart" onClick={handleCart}>
-              <span>Sepet</span>
-              <span></span>
-              <span></span>
+              <span>🛒</span>
               </div>
             </li>
           </ul>
         </nav>
       </div>
+      <div className={`navbar-cart-${cart.showHideCart ? 'open' : 'close'}`}>
         <Cart/>
+      </div>
       </div>
   );
 };

@@ -18,7 +18,7 @@ const PopularProducts = () => {
         <p>Test-1 Aciklama</p>
       </div> */}
       {products.map((product)=>(
-        product.rating > 3.50 && (
+        product.rating > 4.80 && (
         <div key={product.id} className="product-card">
         <img src={product.thumbnail} alt={product.title} />
         <h4>{product.title}</h4>
